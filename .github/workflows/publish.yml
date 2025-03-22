@@ -20,6 +20,8 @@ jobs:
           #mkdir _site
           echo '<h1>Hello, world!</h1>' > _site/index.html
           ls -lah
+          ls -lah _site
+          find _site -type f | while read filename; do echo "<a href=\"$filename\">$filename</a>" >> _site/index.html; done
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
   deploy:
