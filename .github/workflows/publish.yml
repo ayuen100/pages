@@ -19,12 +19,12 @@ jobs:
         run: |
           #mkdir _site
           echo '<h1>Hello, world!</h1>' > _site/index.html
-          echo '<a href="https://github.com/ayuen100/pages">Repository</a>' > _site/index.html
-          echo '<a href="https://github.com/ayuen100/pages/actions/workflows/publish.yml">Workflows</a>' > _site/index.html
+          echo '<a href="https://github.com/ayuen100/pages">Repository</a>' >> _site/index.html
+          echo '<a href="https://github.com/ayuen100/pages/actions/workflows/publish.yml">Workflows</a>' >> _site/index.html
           ls -lah
           ls -lah _site
           cd _site
-          find . -type f | while read filename; do echo "<a href=\"$filename\">$filename</a>" >> _site/index.html; done
+          find . -type f | while read filename; do echo "<a href=\"$filename\">$filename</a>" >> index.html; done
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
   deploy:
