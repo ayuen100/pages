@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build the site
         run: |
-          #mkdir _site
+          mkdir _site
           echo '<h1>Hello, world!</h1>' > _site/index.html
           echo '<a href="https://github.com/ayuen100/pages">Repository</a>' >> _site/index.html
           echo '<a href="https://github.com/ayuen100/pages/actions/workflows/publish.yml">Workflows</a>' >> _site/index.html
